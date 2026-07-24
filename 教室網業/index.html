@@ -303,8 +303,17 @@ function render(d){
   document.querySelectorAll('[data-bind="brand.cta_text"]').forEach(el=>el.textContent=d.brand.cta_text);
   document.title = `${d.brand.name}｜拳擊 · 泰拳 · Kickboxing`;
 
-  const map = K.map_embed
-    ? `<div class="map-box"><iframe src="${esc(K.map_embed)}" loading="lazy" allowfullscreen></iframe></div>`
+  const mapSrc = (() => {
+    let e = (K.map_embed || '').trim();
+    const m = e.match(/src=["']([^"']+)["']/); // 若貼的是整段 <iframe>,取出 src
+    if (m) e = m[1];
+    const usable = /\/maps\/embed|output=embed/.test(e); // 看起來是可嵌入的地圖網址才用
+    if (usable) return e;
+    if (K.address) return 'https://maps.google.com/maps?q=' + encodeURIComponent(K.address) + '&output=embed';
+    return '';
+  })();
+  const map = mapSrc
+    ? `<div class="map-box"><iframe src="${esc(mapSrc)}" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>`
     : `<div class="map-box"><div style="font-size:40px;color:var(--red)">📍</div><p>地圖區塊(示意位置)</p></div>`;
 
   document.getElementById('app').innerHTML = `
