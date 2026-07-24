@@ -3,7 +3,7 @@ backend:
   branch: main
 
 # 後台上傳的圖片會存到這裡
-media_folder: "images/uploads"
+media_folder: "教室網業/images/uploads"
 public_folder: "/images/uploads"
 
 # 讓後台介面顯示中文
@@ -20,7 +20,7 @@ collections:
     files:
       - name: "content"
         label: "全站內容(所有區塊)"
-        file: "content.json"
+        file: "教室網業/content.json"
         format: "json"
         fields:
           # ── 品牌 / 導覽列 ──
