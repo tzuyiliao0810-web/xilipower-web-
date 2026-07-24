@@ -87,10 +87,15 @@
     "eyebrow": "THE FOUNDER",
     "title": "館長介紹",
     "photo": "images/coach.jpg",
-    "name": "范教練",
+    "name": "WILLY教練",
     "role": "悉力拳體能 創辦人 / 主教練",
     "bio": "從事格鬥運動教學超過十年,曾赴泰國專攻泰拳訓練,並取得多項拳擊、Kickboxing 教練證照。堅信「悉力以赴」的訓練精神,致力於用科學化的訓練方法,幫助每一位學員突破自我極限,找到屬於自己的力量與自信。",
-    "tags": ["泰拳 Muay Thai", "拳擊 Boxing", "Kickboxing", "體能訓練"]
+    "tags": [
+      "泰拳 Muay Thai",
+      "拳擊 Boxing",
+      "Kickboxing",
+      "體能訓練"
+    ]
   },
   "faq": {
     "eyebrow": "FAQ",
@@ -116,16 +121,16 @@
     ]
   },
   "contact": {
+    "line_link": "https://line.me/R/ti/p/@xilipower",
+    "line_id": "test",
+    "instagram_link": "https://www.instagram.com/xilipower_boxing",
     "eyebrow": "VISIT US",
-    "title": "教室地址資訊",
-    "address": "台北市信義區松高路100號2樓",
-    "map_embed": "",
     "phone": "(02) 1234-5678",
     "hours": "週一至週五 10:00 - 22:00 ｜ 週六日 10:00 - 18:00",
+    "address": "台北市信義區松高路100號2樓",
     "instagram_handle": "@xilipower_boxing",
-    "instagram_link": "https://www.instagram.com/xilipower_boxing",
-    "line_id": "@xilipower",
-    "line_link": "https://line.me/R/ti/p/@xilipower"
+    "map_embed": "",
+    "title": "教室地址資訊"
   },
   "footer": {
     "copyright": "© 2026 悉力拳體能. All rights reserved."
