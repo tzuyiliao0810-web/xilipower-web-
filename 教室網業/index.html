@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>悉力拳體能｜拳擊 · 泰拳 · Kickboxing</title>
+<meta name="description" content="專業拳擊、泰拳、Kickboxing 課程,零基礎也能開始。用汗水淬鍊實力,用拳頭找回自信。" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Oswald:wght@500;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --red:#e0332e;
+    --red-dark:#b81f1c;
+    --bg:#0d0d0f;
+    --bg2:#141417;
+    --bg3:#1c1c20;
+    --line:#2a2a2f;
+    --text:#f2f2f3;
+    --muted:#9a9aa0;
+    --radius:14px;
+    --maxw:1180px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Noto Sans TC',system-ui,-apple-system,'Microsoft JhengHei',sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.7;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .eyebrow{color:var(--red);font-family:'Oswald',sans-serif;letter-spacing:.28em;
+    font-size:14px;font-weight:600;text-transform:uppercase;text-align:center;margin-bottom:14px;}
+  .section-title{font-size:clamp(28px,4vw,42px);font-weight:900;text-align:center;letter-spacing:.04em;}
+  .section-sub{color:var(--muted);text-align:center;max-width:640px;margin:14px auto 0;font-size:16px;}
+  section{padding:96px 0;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:15px 34px;border-radius:8px;font-weight:700;font-size:16px;cursor:pointer;
+    border:2px solid transparent;transition:.2s;letter-spacing:.03em;}
+  .btn-primary{background:var(--red);color:#fff;}
+  .btn-primary:hover{background:var(--red-dark);transform:translateY(-2px);}
+  .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5);}
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08);}
+
+  /* NAV */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:.3s;
+    background:transparent;border-bottom:1px solid transparent;}
+  header.nav.scrolled{background:rgba(13,13,15,.92);backdrop-filter:blur(10px);
+    border-bottom-color:var(--line);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px;}
+  .logo{font-size:22px;font-weight:900;letter-spacing:.05em;}
+  .logo .hl{color:var(--red);}
+  .nav-links{display:flex;align-items:center;gap:30px;}
+  .nav-links a{font-size:15px;font-weight:500;color:#e8e8ea;transition:.2s;}
+  .nav-links a:hover{color:var(--red);}
+  .nav-links .btn{padding:10px 22px;font-size:15px;}
+  .burger{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer;}
+
+  /* HERO */
+  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;
+    text-align:center;position:relative;padding:120px 0 80px;}
+  .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:-2;}
+  .hero-bg::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(13,13,15,.55),rgba(13,13,15,.82));}
+  .hero-eyebrow{color:var(--red);font-family:'Oswald',sans-serif;letter-spacing:.32em;
+    font-weight:600;font-size:15px;margin-bottom:18px;}
+  .hero h1{font-size:clamp(44px,8vw,84px);font-weight:900;letter-spacing:.06em;line-height:1.05;}
+  .hero p{color:#d4d4d6;max-width:600px;margin:22px auto 38px;font-size:clamp(16px,2vw,19px);}
+  .hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+  .scroll-cue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
+    color:#fff;opacity:.7;font-size:26px;animation:bob 1.8s ease-in-out infinite;}
+  @keyframes bob{0%,100%{transform:translate(-50%,0);}50%{transform:translate(-50%,8px);}}
+
+  /* VIDEOS */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:52px;}
+  .vcard{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;transition:.25s;}
+  .vcard:hover{transform:translateY(-6px);border-color:#3a3a40;}
+  .vthumb{position:relative;aspect-ratio:16/10;background:#000 center/cover;cursor:pointer;}
+  .vthumb .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+  .vthumb .play span{width:60px;height:60px;border-radius:50%;border:2px solid #fff;
+    display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.35);
+    color:#fff;font-size:20px;transition:.2s;}
+  .vthumb:hover .play span{background:var(--red);border-color:var(--red);}
+  .vbody{padding:20px 22px 24px;}
+  .vbody h3{font-size:18px;font-weight:700;margin-bottom:6px;}
+  .vbody p{color:var(--muted);font-size:14px;}
+  .ig-embed{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;padding:0;}
+  .footnote{text-align:center;color:var(--muted);margin-top:44px;font-size:15px;}
+
+  /* PRICING */
+  .pricing{background:var(--bg2);}
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:52px;align-items:stretch;}
+  .plan{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
+    padding:38px 30px;display:flex;flex-direction:column;position:relative;transition:.25s;}
+  .plan:hover{transform:translateY(-6px);}
+  .plan.popular{border-color:var(--red);box-shadow:0 0 0 1px var(--red),0 18px 40px rgba(224,51,46,.18);}
+  .plan .badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+    background:var(--red);color:#fff;font-size:13px;font-weight:700;padding:5px 16px;border-radius:20px;letter-spacing:.05em;}
+  .plan h3{font-size:22px;font-weight:700;}
+  .plan .price{font-size:34px;font-weight:900;margin:14px 0 2px;font-family:'Oswald',sans-serif;}
+  .plan .unit{color:var(--muted);font-size:15px;}
+  .plan ul{list-style:none;margin:24px 0 28px;display:flex;flex-direction:column;gap:12px;}
+  .plan li{display:flex;gap:10px;font-size:15px;color:#d6d6d8;}
+  .plan li::before{content:"✓";color:var(--red);font-weight:900;}
+  .plan .btn{margin-top:auto;width:100%;}
+
+  /* COACH */
+  .coach-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:center;margin-top:20px;}
+  .coach-photo{position:relative;border-radius:var(--radius);overflow:hidden;
+    box-shadow:0 0 0 1px var(--line),-18px 0 60px rgba(224,51,46,.28);}
+  .coach-photo img{width:100%;aspect-ratio:7/8.5;object-fit:cover;}
+  .coach-body .eyebrow{text-align:left;}
+  .coach-body h2{text-align:left;font-size:clamp(28px,4vw,40px);}
+  .coach-name{font-size:26px;font-weight:900;margin-top:6px;}
+  .coach-role{color:var(--red);font-weight:600;margin:4px 0 18px;}
+  .coach-bio{color:#cfcfd2;font-size:16px;}
+  .tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px;}
+  .tag{background:var(--red);color:#fff;font-size:13px;font-weight:700;padding:7px 15px;border-radius:6px;}
+
+  /* FAQ */
+  .faq{background:var(--bg2);}
+  .faq-list{max-width:820px;margin:52px auto 0;display:flex;flex-direction:column;gap:14px;}
+  .faq-item{background:var(--bg);border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+  .faq-q{width:100%;text-align:left;background:none;border:0;color:var(--text);cursor:pointer;
+    padding:22px 24px;font-size:17px;font-weight:600;display:flex;justify-content:space-between;
+    align-items:center;gap:16px;font-family:inherit;}
+  .faq-q .ic{color:var(--red);font-size:22px;transition:.3s;flex-shrink:0;}
+  .faq-item.open .faq-q .ic{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--muted);}
+  .faq-a p{padding:0 24px 22px;font-size:15px;}
+
+  /* CONTACT */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:52px;}
+  .map-box{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);
+    min-height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    color:var(--muted);overflow:hidden;}
+  .map-box iframe{width:100%;height:100%;min-height:340px;border:0;}
+  .info-box{background:var(--bg2);border:1px solid var(--line);border-radius:var(--radius);padding:34px 34px;}
+  .info-row{display:flex;gap:16px;padding:16px 0;align-items:flex-start;}
+  .info-row .ic{width:40px;height:40px;border-radius:50%;background:rgba(224,51,46,.15);
+    color:var(--red);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+  .info-row .lbl{color:var(--muted);font-size:13px;}
+  .info-row .val{font-size:16px;font-weight:500;}
+  .info-divider{border-top:1px solid var(--line);margin:14px 0;}
+  .socials .info-row{padding:10px 0;}
+
+  /* FOOTER */
+  footer{padding:40px 0;text-align:center;border-top:1px solid var(--line);}
+  footer .logo{font-size:20px;margin-bottom:10px;}
+  footer .copy{color:var(--muted);font-size:14px;}
+
+  /* MODAL */
+  .modal{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:200;display:none;
+    align-items:center;justify-content:center;padding:24px;}
+  .modal.show{display:flex;}
+  .modal-inner{width:min(900px,100%);aspect-ratio:16/9;position:relative;}
+  .modal-inner iframe{width:100%;height:100%;border:0;border-radius:10px;}
+  .modal-close{position:absolute;top:-44px;right:0;background:none;border:0;color:#fff;font-size:30px;cursor:pointer;}
+
+  @media(max-width:900px){
+    .cards,.plans{grid-template-columns:1fr;}
+    .coach-grid{grid-template-columns:1fr;gap:32px;}
+    .coach-photo{max-width:420px;margin:0 auto;}
+    .contact-grid{grid-template-columns:1fr;}
+    .nav-links{position:fixed;top:72px;right:0;bottom:0;width:260px;flex-direction:column;
+      align-items:flex-start;gap:8px;background:var(--bg2);padding:26px;transform:translateX(100%);
+      transition:.3s;border-left:1px solid var(--line);}
+    .nav-links.open{transform:translateX(0);}
+    .nav-links a{width:100%;padding:10px 0;}
+    .burger{display:block;}
+    section{padding:72px 0;}
+  }
+</style>
+</head>
+<body>
+<!-- Netlify Identity widget: handles admin login invite/confirmation redirects -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+      }
+    });
+  }
+</script>
+
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <div class="logo" data-bind="brand.name">悉力<span class="hl">拳</span>體能</div>
+    <button class="burger" id="burger" aria-label="選單">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#hero">首頁</a>
+      <a href="#videos">課程影片</a>
+      <a href="#pricing">課程方案</a>
+      <a href="#coach">館長介紹</a>
+      <a href="#faq">常見問題</a>
+      <a href="#contact">地址資訊</a>
+      <a href="#contact" class="btn btn-primary" data-bind="brand.cta_text">立即體驗</a>
+    </nav>
+  </div>
+</header>
+
+<main id="app"><!-- rendered by JS --></main>
+
+<div class="modal" id="modal">
+  <div class="modal-inner">
+    <button class="modal-close" id="modalClose" aria-label="關閉">×</button>
+    <iframe id="modalFrame" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- LOCAL PREVIEW FALLBACK：部署後網站會讀取 content.json(此為唯一資料來源)。
+     下面這份內嵌資料只在「本機直接雙擊開啟」無法讀取 content.json 時作為預覽備援。 -->
+<script id="fallback-content" type="application/json">
+{
+  "brand": { "name": "悉力拳體能", "cta_text": "立即體驗" },
+  "hero": {
+    "eyebrow": "BOXING · MUAY THAI · KICKBOXING",
+    "title": "悉力拳體能",
+    "subtitle": "用汗水淬鍊實力,用拳頭找回自信。專業拳擊、泰拳、Kickboxing 課程,帶你打造更強悍的自己。",
+    "bg_image": "images/hero.jpg",
+    "primary_btn_text": "立即體驗", "secondary_btn_text": "觀看課程影片"
+  },
+  "videos": {
+    "eyebrow": "TRAINING VIDEOS", "title": "課程影片",
+    "subtitle": "精選訓練片段,帶你搶先感受悉力拳體能的訓練強度",
+    "footnote": "更多精彩訓練影片即將上線,敬請期待",
+    "items": [
+      { "type": "image", "url": "", "thumb": "images/video1.jpg", "title": "泰拳基礎組合技", "desc": "拳、肘、膝的基礎連續攻擊訓練" },
+      { "type": "image", "url": "", "thumb": "images/video2.jpg", "title": "拳擊靶位反應訓練", "desc": "強化出拳速度與反應節奏" },
+      { "type": "image", "url": "", "thumb": "images/video3.jpg", "title": "格鬥體能燃脂訓練", "desc": "戰繩 + 核心訓練,全面提升體能" }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "PRICING", "title": "課程方案", "subtitle": "彈性方案,適合各種程度與目標",
+    "plans": [
+      { "name": "體驗課", "price": "NT$ 500", "unit": "／單堂", "features": ["一對一或小班體驗","含手綁帶與拳套借用","教練評估體能與目標"], "popular": false, "btn_text": "預約體驗" },
+      { "name": "月費無限", "price": "NT$ 3,600", "unit": "／月", "features": ["團體課無限次數","拳擊、泰拳、Kickboxing 皆可上","自由使用場館器材"], "popular": true, "btn_text": "我要報名" },
+      { "name": "私人教練", "price": "NT$ 1,200", "unit": "／堂起", "features": ["一對一客製化課表","技術與體能雙軌訓練","彈性預約時段"], "popular": false, "btn_text": "諮詢私教" }
+    ]
+  },
+  "coach": {
+    "eyebrow": "THE FOUNDER", "title": "館長介紹", "photo": "images/coach.jpg",
+    "name": "范教練", "role": "悉力拳體能 創辦人 / 主教練",
+    "bio": "從事格鬥運動教學超過十年,曾赴泰國專攻泰拳訓練,並取得多項拳擊、Kickboxing 教練證照。堅信「悉力以赴」的訓練精神,致力於用科學化的訓練方法,幫助每一位學員突破自我極限,找到屬於自己的力量與自信。",
+    "tags": ["泰拳 Muay Thai", "拳擊 Boxing", "Kickboxing", "體能訓練"]
+  },
+  "faq": {
+    "eyebrow": "FAQ", "title": "常見問題", "subtitle": "第一次來訓練前,你可能想知道的事",
+    "items": [
+      { "q": "完全沒有運動基礎可以上課嗎?", "a": "當然可以。我們的課程從最基礎的姿勢與步法開始教起,教練會依你的體能與程度調整強度,零基礎也能安心參加。" },
+      { "q": "需要自己準備裝備嗎?", "a": "體驗課會免費提供拳套與手綁帶借用,你只要穿著方便運動的服裝與運動鞋即可。若之後長期上課,建議添購個人手綁帶。" },
+      { "q": "女生適合練拳擊嗎?", "a": "非常適合。拳擊與泰拳是很好的全身有氧與塑身運動,館內有許多女性學員,課程也會依需求調整。" },
+      { "q": "一堂課大約多久?", "a": "團體課約 60 分鐘,包含暖身、技術訓練與體能收操;私人教練課可依需求彈性安排。" }
+    ]
+  },
+  "contact": {
+    "eyebrow": "VISIT US", "title": "教室地址資訊", "address": "台北市信義區松高路100號2樓", "map_embed": "",
+    "phone": "(02) 1234-5678", "hours": "週一至週五 10:00 - 22:00 ｜ 週六日 10:00 - 18:00",
+    "instagram_handle": "@xilipower_boxing", "instagram_link": "https://www.instagram.com/xilipower_boxing",
+    "line_id": "@xilipower", "line_link": "https://line.me/R/ti/p/@xilipower"
+  },
+  "footer": { "copyright": "© 2026 悉力拳體能. All rights reserved." }
+}
+</script>
+
+<script>
+const esc = s => String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const nl2br = s => esc(s).replace(/\n/g,'<br>');
+
+function ytId(url){
+  if(!url) return '';
+  const m = url.match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([\w-]{11})/);
+  return m ? m[1] : '';
+}
+
+function videoCard(v){
+  if(v.type === 'instagram' && v.url){
+    return `<div class="ig-embed"><blockquote class="instagram-media" data-instgrm-permalink="${esc(v.url)}" data-instgrm-version="14" style="margin:0;width:100%;"></blockquote></div>`;
+  }
+  const yid = v.type === 'youtube' ? ytId(v.url) : '';
+  const thumb = v.thumb || (yid ? `https://img.youtube.com/vi/${yid}/hqdefault.jpg` : '');
+  const clickable = (v.type === 'youtube' && yid);
+  const dataAttr = clickable ? `data-yt="${esc(yid)}"` : '';
+  return `<div class="vcard">
+    <div class="vthumb" ${dataAttr} style="background-image:url('${esc(thumb)}')">
+      <div class="play"><span>▶</span></div>
+    </div>
+    <div class="vbody"><h3>${esc(v.title)}</h3><p>${esc(v.desc)}</p></div>
+  </div>`;
+}
+
+function render(d){
+  const H = d.hero, V = d.videos, P = d.pricing, C = d.coach, F = d.faq, K = d.contact, FT = d.footer;
+  document.querySelectorAll('[data-bind="brand.name"]').forEach(el=>{
+    el.innerHTML = esc(d.brand.name).replace('拳','<span class="hl">拳</span>');
+  });
+  document.querySelectorAll('[data-bind="brand.cta_text"]').forEach(el=>el.textContent=d.brand.cta_text);
+  document.title = `${d.brand.name}｜拳擊 · 泰拳 · Kickboxing`;
+
+  const map = K.map_embed
+    ? `<div class="map-box"><iframe src="${esc(K.map_embed)}" loading="lazy" allowfullscreen></iframe></div>`
+    : `<div class="map-box"><div style="font-size:40px;color:var(--red)">📍</div><p>地圖區塊(示意位置)</p></div>`;
+
+  document.getElementById('app').innerHTML = `
+  <section class="hero" id="hero">
+    <div class="hero-bg" style="background-image:url('${esc(H.bg_image)}')"></div>
+    <div class="wrap">
+      <div class="hero-eyebrow">${esc(H.eyebrow)}</div>
+      <h1>${esc(H.title)}</h1>
+      <p>${esc(H.subtitle)}</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-primary">${esc(H.primary_btn_text)}</a>
+        <a href="#videos" class="btn btn-ghost">${esc(H.secondary_btn_text)}</a>
+      </div>
+    </div>
+    <a href="#videos" class="scroll-cue">⌄</a>
+  </section>
+
+  <section id="videos"><div class="wrap">
+    <div class="eyebrow">${esc(V.eyebrow)}</div>
+    <h2 class="section-title">${esc(V.title)}</h2>
+    <p class="section-sub">${esc(V.subtitle)}</p>
+    <div class="cards">${(V.items||[]).map(videoCard).join('')}</div>
+    ${V.footnote?`<p class="footnote">${esc(V.footnote)}</p>`:''}
+  </div></section>
+
+  <section class="pricing" id="pricing"><div class="wrap">
+    <div class="eyebrow">${esc(P.eyebrow)}</div>
+    <h2 class="section-title">${esc(P.title)}</h2>
+    <p class="section-sub">${esc(P.subtitle)}</p>
+    <div class="plans">${(P.plans||[]).map(pl=>`
+      <div class="plan ${pl.popular?'popular':''}">
+        ${pl.popular?'<div class="badge">熱門</div>':''}
+        <h3>${esc(pl.name)}</h3>
+        <div class="price">${esc(pl.price)}</div>
+        <div class="unit">${esc(pl.unit)}</div>
+        <ul>${(pl.features||[]).map(f=>`<li>${esc(f)}</li>`).join('')}</ul>
+        <a href="#contact" class="btn ${pl.popular?'btn-primary':'btn-ghost'}">${esc(pl.btn_text)}</a>
+      </div>`).join('')}</div>
+  </div></section>
+
+  <section id="coach"><div class="wrap">
+    <div class="coach-grid">
+      <div class="coach-photo"><img src="${esc(C.photo)}" alt="${esc(C.name)}"></div>
+      <div class="coach-body">
+        <div class="eyebrow">${esc(C.eyebrow)}</div>
+        <h2 class="section-title">${esc(C.title)}</h2>
+        <div class="coach-name">${esc(C.name)}</div>
+        <div class="coach-role">${esc(C.role)}</div>
+        <p class="coach-bio">${nl2br(C.bio)}</p>
+        <div class="tags">${(C.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>
+      </div>
+    </div>
+  </div></section>
+
+  <section class="faq" id="faq"><div class="wrap">
+    <div class="eyebrow">${esc(F.eyebrow)}</div>
+    <h2 class="section-title">${esc(F.title)}</h2>
+    <p class="section-sub">${esc(F.subtitle)}</p>
+    <div class="faq-list">${(F.items||[]).map(it=>`
+      <div class="faq-item">
+        <button class="faq-q">${esc(it.q)}<span class="ic">＋</span></button>
+        <div class="faq-a"><p>${nl2br(it.a)}</p></div>
+      </div>`).join('')}</div>
+  </div></section>
+
+  <section id="contact"><div class="wrap">
+    <div class="eyebrow">${esc(K.eyebrow)}</div>
+    <h2 class="section-title">${esc(K.title)}</h2>
+    <div class="contact-grid">
+      ${map}
+      <div class="info-box">
+        <div class="info-row"><div class="ic">📍</div><div><div class="lbl">地址</div><div class="val">${esc(K.address)}</div></div></div>
+        <div class="info-row"><div class="ic">📞</div><div><div class="lbl">電話</div><div class="val"><a href="tel:${esc(K.phone)}">${esc(K.phone)}</a></div></div></div>
+        <div class="info-row"><div class="ic">🕐</div><div><div class="lbl">營業時間</div><div class="val">${esc(K.hours)}</div></div></div>
+        <div class="info-divider"></div>
+        <div class="socials">
+          <div class="lbl" style="margin-bottom:4px">社群帳號</div>
+          <div class="info-row"><div class="ic">◎</div><div class="val"><a href="${esc(K.instagram_link)}" target="_blank" rel="noopener">${esc(K.instagram_handle)}</a></div></div>
+          <div class="info-row"><div class="ic">💬</div><div class="val"><a href="${esc(K.line_link)}" target="_blank" rel="noopener">LINE ID：${esc(K.line_id)}</a></div></div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <footer>
+    <div class="logo">${esc(d.brand.name).replace('拳','<span class="hl">拳</span>')}</div>
+    <div class="copy">${esc(FT.copyright)}</div>
+  </footer>`;
+
+  wireInteractions();
+  if(window.instgrm) window.instgrm.Embeds.process();
+}
+
+function wireInteractions(){
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    item.querySelector('.faq-q').addEventListener('click',()=>{
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight=null;});
+      if(!open){item.classList.add('open');const a=item.querySelector('.faq-a');a.style.maxHeight=a.scrollHeight+'px';}
+    });
+  });
+  // YouTube modal
+  const modal=document.getElementById('modal'),frame=document.getElementById('modalFrame');
+  document.querySelectorAll('.vthumb[data-yt]').forEach(t=>{
+    t.addEventListener('click',()=>{frame.src=`https://www.youtube.com/embed/${t.dataset.yt}?autoplay=1`;modal.classList.add('show');});
+  });
+  const close=()=>{modal.classList.remove('show');frame.src='';};
+  document.getElementById('modalClose').onclick=close;
+  modal.addEventListener('click',e=>{if(e.target===modal)close();});
+}
+
+// Nav behaviour
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
+document.getElementById('burger').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+document.querySelectorAll('#navLinks a').forEach(a=>a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+
+// Instagram embed script (loaded once; used if any IG card present)
+(function(){const s=document.createElement('script');s.async=true;s.src='https://www.instagram.com/embed.js';document.body.appendChild(s);})();
+
+// Load content: prefer live content.json, fall back to inlined data for local file:// preview
+async function boot(){
+  let data;
+  try{
+    const res = await fetch('content.json',{cache:'no-store'});
+    if(!res.ok) throw new Error('no json');
+    data = await res.json();
+  }catch(e){
+    data = JSON.parse(document.getElementById('fallback-content').textContent);
+  }
+  render(data);
+}
+boot();
+</script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+{
+  "brand": {
+    "name": "悉力拳體能",
+    "cta_text": "立即體驗"
+  },
+  "hero": {
+    "eyebrow": "BOXING · MUAY THAI · KICKBOXING",
+    "title": "悉力拳體能",
+    "subtitle": "用汗水淬鍊實力,用拳頭找回自信。專業拳擊、泰拳、Kickboxing 課程,帶你打造更強悍的自己。",
+    "bg_image": "images/hero.jpg",
+    "primary_btn_text": "立即體驗",
+    "secondary_btn_text": "觀看課程影片"
+  },
+  "videos": {
+    "eyebrow": "TRAINING VIDEOS",
+    "title": "課程影片",
+    "subtitle": "精選訓練片段,帶你搶先感受悉力拳體能的訓練強度",
+    "footnote": "更多精彩訓練影片即將上線,敬請期待",
+    "items": [
+      {
+        "type": "image",
+        "url": "",
+        "thumb": "images/video1.jpg",
+        "title": "泰拳基礎組合技",
+        "desc": "拳、肘、膝的基礎連續攻擊訓練"
+      },
+      {
+        "type": "image",
+        "url": "",
+        "thumb": "images/video2.jpg",
+        "title": "拳擊靶位反應訓練",
+        "desc": "強化出拳速度與反應節奏"
+      },
+      {
+        "type": "image",
+        "url": "",
+        "thumb": "images/video3.jpg",
+        "title": "格鬥體能燃脂訓練",
+        "desc": "戰繩 + 核心訓練,全面提升體能"
+      }
+    ]
+  },
+  "pricing": {
+    "eyebrow": "PRICING",
+    "title": "課程方案",
+    "subtitle": "彈性方案,適合各種程度與目標",
+    "plans": [
+      {
+        "name": "體驗課",
+        "price": "NT$ 500",
+        "unit": "／單堂",
+        "features": [
+          "一對一或小班體驗",
+          "含手綁帶與拳套借用",
+          "教練評估體能與目標"
+        ],
+        "popular": false,
+        "btn_text": "預約體驗"
+      },
+      {
+        "name": "月費無限",
+        "price": "NT$ 3,600",
+        "unit": "／月",
+        "features": [
+          "團體課無限次數",
+          "拳擊、泰拳、Kickboxing 皆可上",
+          "自由使用場館器材"
+        ],
+        "popular": true,
+        "btn_text": "我要報名"
+      },
+      {
+        "name": "私人教練",
+        "price": "NT$ 1,200",
+        "unit": "／堂起",
+        "features": [
+          "一對一客製化課表",
+          "技術與體能雙軌訓練",
+          "彈性預約時段"
+        ],
+        "popular": false,
+        "btn_text": "諮詢私教"
+      }
+    ]
+  },
+  "coach": {
+    "eyebrow": "THE FOUNDER",
+    "title": "館長介紹",
+    "photo": "images/coach.jpg",
+    "name": "范教練",
+    "role": "悉力拳體能 創辦人 / 主教練",
+    "bio": "從事格鬥運動教學超過十年,曾赴泰國專攻泰拳訓練,並取得多項拳擊、Kickboxing 教練證照。堅信「悉力以赴」的訓練精神,致力於用科學化的訓練方法,幫助每一位學員突破自我極限,找到屬於自己的力量與自信。",
+    "tags": ["泰拳 Muay Thai", "拳擊 Boxing", "Kickboxing", "體能訓練"]
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "常見問題",
+    "subtitle": "第一次來訓練前,你可能想知道的事",
+    "items": [
+      {
+        "q": "完全沒有運動基礎可以上課嗎?",
+        "a": "當然可以。我們的課程從最基礎的姿勢與步法開始教起,教練會依你的體能與程度調整強度,零基礎也能安心參加。"
+      },
+      {
+        "q": "需要自己準備裝備嗎?",
+        "a": "體驗課會免費提供拳套與手綁帶借用,你只要穿著方便運動的服裝與運動鞋即可。若之後長期上課,建議添購個人手綁帶。"
+      },
+      {
+        "q": "女生適合練拳擊嗎?",
+        "a": "非常適合。拳擊與泰拳是很好的全身有氧與塑身運動,館內有許多女性學員,課程也會依需求調整。"
+      },
+      {
+        "q": "一堂課大約多久?",
+        "a": "團體課約 60 分鐘,包含暖身、技術訓練與體能收操;私人教練課可依需求彈性安排。"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "VISIT US",
+    "title": "教室地址資訊",
+    "address": "台北市信義區松高路100號2樓",
+    "map_embed": "",
+    "phone": "(02) 1234-5678",
+    "hours": "週一至週五 10:00 - 22:00 ｜ 週六日 10:00 - 18:00",
+    "instagram_handle": "@xilipower_boxing",
+    "instagram_link": "https://www.instagram.com/xilipower_boxing",
+    "line_id": "@xilipower",
+    "line_link": "https://line.me/R/ti/p/@xilipower"
+  },
+  "footer": {
+    "copyright": "© 2026 悉力拳體能. All rights reserved."
+  }
+}
